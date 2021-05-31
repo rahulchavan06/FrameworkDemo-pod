@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70A8AF0826654D5000B43D7F /* BLEDevKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 70A8AF0626654D5000B43D7F /* BLEDevKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70A8AF0826654D5000B43D7F /* CommunicationLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 70A8AF0626654D5000B43D7F /* CommunicationLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		70A8AF0326654D5000B43D7F /* BLEDevKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BLEDevKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		70A8AF0626654D5000B43D7F /* BLEDevKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEDevKit.h; sourceTree = "<group>"; };
+		70A8AF0326654D5000B43D7F /* CommunicationLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommunicationLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A8AF0626654D5000B43D7F /* CommunicationLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommunicationLibrary.h; sourceTree = "<group>"; };
 		70A8AF0726654D5000B43D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -30,7 +30,7 @@
 		70A8AEF926654D5000B43D7F = {
 			isa = PBXGroup;
 			children = (
-				70A8AF0526654D5000B43D7F /* BLEDevKit */,
+				70A8AF0526654D5000B43D7F /* CommunicationLibrary */,
 				70A8AF0426654D5000B43D7F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -38,18 +38,18 @@
 		70A8AF0426654D5000B43D7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				70A8AF0326654D5000B43D7F /* BLEDevKit.framework */,
+				70A8AF0326654D5000B43D7F /* CommunicationLibrary.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		70A8AF0526654D5000B43D7F /* BLEDevKit */ = {
+		70A8AF0526654D5000B43D7F /* CommunicationLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				70A8AF0626654D5000B43D7F /* BLEDevKit.h */,
+				70A8AF0626654D5000B43D7F /* CommunicationLibrary.h */,
 				70A8AF0726654D5000B43D7F /* Info.plist */,
 			);
-			path = BLEDevKit;
+			path = CommunicationLibrary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,16 +59,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70A8AF0826654D5000B43D7F /* BLEDevKit.h in Headers */,
+				70A8AF0826654D5000B43D7F /* CommunicationLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		70A8AF0226654D5000B43D7F /* BLEDevKit */ = {
+		70A8AF0226654D5000B43D7F /* CommunicationLibrary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 70A8AF0B26654D5000B43D7F /* Build configuration list for PBXNativeTarget "BLEDevKit" */;
+			buildConfigurationList = 70A8AF0B26654D5000B43D7F /* Build configuration list for PBXNativeTarget "CommunicationLibrary" */;
 			buildPhases = (
 				70A8AEFE26654D5000B43D7F /* Headers */,
 				70A8AEFF26654D5000B43D7F /* Sources */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = BLEDevKit;
+			name = CommunicationLibrary;
 			productName = BLEDevKit;
-			productReference = 70A8AF0326654D5000B43D7F /* BLEDevKit.framework */;
+			productReference = 70A8AF0326654D5000B43D7F /* CommunicationLibrary.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 70A8AEFD26654D5000B43D7F /* Build configuration list for PBXProject "BLEDevKit" */;
+			buildConfigurationList = 70A8AEFD26654D5000B43D7F /* Build configuration list for PBXProject "CommunicationLibrary" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,7 +110,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				70A8AF0226654D5000B43D7F /* BLEDevKit */,
+				70A8AF0226654D5000B43D7F /* CommunicationLibrary */,
 			);
 		};
 /* End PBXProject section */
@@ -267,14 +267,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BLEDevKit/Info.plist;
+				INFOPLIST_FILE = CommunicationLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.odh.BLEDevKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.odh.CommunicationLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -291,14 +291,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BLEDevKit/Info.plist;
+				INFOPLIST_FILE = CommunicationLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.odh.BLEDevKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.odh.CommunicationLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -309,7 +309,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		70A8AEFD26654D5000B43D7F /* Build configuration list for PBXProject "BLEDevKit" */ = {
+		70A8AEFD26654D5000B43D7F /* Build configuration list for PBXProject "CommunicationLibrary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				70A8AF0926654D5000B43D7F /* Debug */,
@@ -318,7 +318,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70A8AF0B26654D5000B43D7F /* Build configuration list for PBXNativeTarget "BLEDevKit" */ = {
+		70A8AF0B26654D5000B43D7F /* Build configuration list for PBXNativeTarget "CommunicationLibrary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				70A8AF0C26654D5000B43D7F /* Debug */,
