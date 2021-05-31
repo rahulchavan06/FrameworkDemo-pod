@@ -15,6 +15,8 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/rahulchavan06/FrameworkDemo-pod.git", :tag => "#{spec.version}" }
   spec.vendored_frameworks = 'CommunicationLibrary.xcframework'
   spec.swift_version = "5.0"
+  spec.dependency 'Realm'
+  spec.dependency 'RealmSwift'
 
 end
 
