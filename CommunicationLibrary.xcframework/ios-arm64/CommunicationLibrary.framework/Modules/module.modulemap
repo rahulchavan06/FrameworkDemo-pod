@@ -1,0 +1,11 @@
+framework module CommunicationLibrary {
+  umbrella header "CommunicationLibrary.h"
+
+  export *
+  module * { export * }
+}
+
+module CommunicationLibrary.Swift {
+    header "CommunicationLibrary-Swift.h"
+    requires objc
+}

@@ -1,0 +1,223 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios13.4 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CommunicationLibrary
+@_exported import CommunicationLibrary
+import CoreBluetooth
+import Foundation
+import Swift
+@objc @_inheritsConvenienceInitializers public class BLEGateway : ObjectiveC.NSObject, CoreBluetooth.CBPeripheralDelegate {
+  public var _manager: CoreBluetooth.CBCentralManager?
+  public var delegate: CommunicationLibrary.IBluetoothGateway?
+  public var connectedPeripheral: CoreBluetooth.CBPeripheral?
+  public var deviceState: CommunicationLibrary.BLECentralState
+  @objc override dynamic public init()
+  public func configure(config: [Swift.String : Any])
+  public static func getInstance() -> CommunicationLibrary.BLEGateway
+  public func startScanPeripheral()
+  public func stopScanPeripheral()
+  public func connectPeripheral(_ peripheral: CoreBluetooth.CBPeripheral)
+  public func disconnectPeripheral()
+  public func temporaryDisconnectPeripheral()
+  public func discoverDescriptor(_ characteristic: CoreBluetooth.CBCharacteristic)
+  public func discoverCharacteristics()
+  public func setNotification(enable: Swift.Bool, forCharacteristic characteristic: CoreBluetooth.CBCharacteristic)
+  @objc deinit
+}
+extension BLEGateway : CoreBluetooth.CBCentralManagerDelegate {
+  @objc dynamic public func centralManagerDidUpdateState(_ central: CoreBluetooth.CBCentralManager)
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, willRestoreState dict: [Swift.String : Any])
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDiscover peripheral: CoreBluetooth.CBPeripheral, advertisementData: [Swift.String : Any], rssi RSSI: Foundation.NSNumber)
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didConnect peripheral: CoreBluetooth.CBPeripheral)
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didFailToConnect peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error?)
+  @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverServices error: Swift.Error?)
+  @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverCharacteristicsFor service: CoreBluetooth.CBService, error: Swift.Error?)
+  @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverDescriptorsFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDisconnectPeripheral peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error?)
+  @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateValueFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
+  public func peripheral(peripheral: CoreBluetooth.CBPeripheral!, didUpdateNotificationStateForCharacteristic characteristic: CoreBluetooth.CBCharacteristic!, error: Foundation.NSError!)
+}
+public protocol IBluetoothGateway {
+  func didUpdateState(_ state: CoreBluetooth.CBManagerState)
+  func willRestoreState(_ peripheral: CommunicationLibrary.DeviceDetails)
+  func didDiscoverPeripheral(_ peripheral: CommunicationLibrary.DeviceDetails)
+  func didDiscoverServices(_ peripheral: CoreBluetooth.CBPeripheral)
+  func didDiscoverCharacteritics(_ service: CoreBluetooth.CBService)
+  func didDiscoverDescriptors(_ characteristic: CoreBluetooth.CBCharacteristic)
+  func didConnectedPeripheral(_ connectedPeripheral: CoreBluetooth.CBPeripheral)
+  func didDisconnectPeripheral(_ peripheral: CoreBluetooth.CBPeripheral)
+  func didReadValueForCharacteristic(_ characteristic: CoreBluetooth.CBCharacteristic)
+  func failedToConnect(_ errorCode: CommunicationLibrary.ConnectionError, attemptCount: Swift.Int)
+  func didFailedToHandshake(_ peripheral: CoreBluetooth.CBPeripheral)
+  func didFailToDiscoverCharacteritics(_ error: Swift.Error)
+  func didFailToDiscoverDescriptors(_ error: Swift.Error)
+  func didFailToReadValueForCharacteristic(_ error: Swift.Error)
+  func failedToConnectWithError(_ peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error)
+  func failedWithError(_ peripheral: CommunicationLibrary.DeviceDetails, errorCode: CommunicationLibrary.ConnectionError)
+}
+extension IBluetoothGateway {
+  public func didUpdateState(_ state: CoreBluetooth.CBManagerState)
+  public func willRestoreState(_ peripheral: CommunicationLibrary.DeviceDetails)
+  public func didDiscoverPeripheral(_ peripheral: CommunicationLibrary.DeviceDetails)
+  public func didDiscoverServices(_ peripheral: CoreBluetooth.CBPeripheral)
+  public func didDiscoverCharacteritics(_ service: CoreBluetooth.CBService)
+  public func didDiscoverDescriptors(_ characteristic: CoreBluetooth.CBCharacteristic)
+  public func didConnectedPeripheral(_ connectedPeripheral: CoreBluetooth.CBPeripheral)
+  public func didDisconnectPeripheral(_ peripheral: CoreBluetooth.CBPeripheral)
+  public func didReadValueForCharacteristic(_ characteristic: CoreBluetooth.CBCharacteristic)
+  public func failedToConnect(_ errorCode: CommunicationLibrary.ConnectionError, attemptCount: Swift.Int)
+  public func didFailedToHandshake(_ peripheral: CoreBluetooth.CBPeripheral)
+  public func didFailToDiscoverCharacteritics(_ error: Swift.Error)
+  public func didFailToDiscoverDescriptors(_ error: Swift.Error)
+  public func didFailToReadValueForCharacteristic(_ error: Swift.Error)
+  public func failedToConnectWithError(_ peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error)
+  public func failedWithError(_ peripheral: CommunicationLibrary.DeviceDetails, errorCode: CommunicationLibrary.ConnectionError)
+}
+public class DeviceDetails : Swift.Equatable, Swift.Hashable {
+  final public let peripheral: CoreBluetooth.CBPeripheral
+  public var bleServices: [CoreBluetooth.CBService]
+  public var RSSI: Swift.Int
+  public var advertisementData: [Swift.String : Any]
+  public var name: Swift.String?
+  public var address: Swift.String?
+  public var bondedStatus: Swift.Bool
+  public var plipSchema: Swift.Int
+  public var deviceType: CommunicationLibrary.PeripheralType?
+  public var connectionStatus: CommunicationLibrary.BLEPeripheralState?
+  public var lastUpdatedTimeInterval: Foundation.TimeInterval
+  public init(_ peripheral: CoreBluetooth.CBPeripheral)
+  public static func == (lhs: CommunicationLibrary.DeviceDetails, rhs: CommunicationLibrary.DeviceDetails) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  @objc deinit
+  public func hash(into hasher: inout Swift.Hasher)
+}
+extension CBCharacteristic {
+  public var cbCharacteristicName: Swift.String {
+    get
+  }
+}
+public enum BLECentralState : Swift.Int {
+  case unknown
+  case resetting
+  case unsupported
+  case unauthorized
+  case poweredOff
+  case poweredOn
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum BLEPeripheralState : Swift.Int {
+  case disconnected
+  case connecting
+  case connected
+  case disconnecting
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum PeripheralType : Swift.Int {
+  case DW2
+  case DW5
+  case RW2
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ConnectionError : Swift.Int {
+  case FAILED_TO_CONNECT
+  case FAILED_TO_CONNECT_BLE_DISABLED
+  case FAILED_TO_CONNECT_INSUFFICIENT_AUTHENTICATION_ENCRYPTION
+  case FAILED_TO_DISCOVER_SERVICES
+  case FAILED_TO_DISCOVER_CHARACTERISTICS
+  case FAILED_TO_DISCOVER_DESCRIPTORS
+  case FAILED_TO_RECONNECT
+  case RETRYING_TO_CONNECT
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ConfigKeys : Swift.String {
+  case REATTEMPT_COUNT_KEY
+  case WILL_RESTORE_STATE
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+}
+public enum ScanError : Swift.Int {
+  case NO_ERROR
+  case SCAN_FAILED_ALREADY_STARTED
+  case SCAN_FAILED_APPLICATION_REGISTRATION_FAILED
+  case SCAN_FAILED_INTERNAL_ERROR
+  case SCAN_FAILED_FEATURE_UNSUPPORTED
+  case SCAN_FAILED_OUT_OF_HARDWARE_RESOURCES
+  case SCAN_FAILED_SCANNING_TOO_FREQUENTLY
+  case SCAN_FAILED_BLUETOOTH_DISABLED
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CBCharacteristicProperties {
+  public var names: [Swift.String] {
+    get
+  }
+}
+extension CBUUID {
+  public static let genericAccessUUID: CoreBluetooth.CBUUID
+  public static let deviceInfoUUID: CoreBluetooth.CBUUID
+  public static let proteusUUID: CoreBluetooth.CBUUID
+  public static let deviceNameUUID: CoreBluetooth.CBUUID
+  public static let appearanceUUID: CoreBluetooth.CBUUID
+  public static let modelNumberUUID: CoreBluetooth.CBUUID
+  public static let firmwareRevisionUUID: CoreBluetooth.CBUUID
+  public static let softwareRevisionUUID: CoreBluetooth.CBUUID
+  public static let manufacturerNameUUID: CoreBluetooth.CBUUID
+  public static let PLIPReadUUID: CoreBluetooth.CBUUID
+  public static let PLIPWriteUUID: CoreBluetooth.CBUUID
+}
+extension CBUUID {
+  public var cbUUIDName: Swift.String? {
+    get
+  }
+}
+extension CBService {
+  public var cbServiceName: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers open class CBAdvertisingData {
+  open class func getAdvertisingDataName(_ key: Swift.String) -> Swift.String
+  open class func getAdvertisingDataStringValue(_ datas: [Swift.String : Any?], key: Swift.String) -> Swift.String
+  @objc deinit
+}
+extension CommunicationLibrary.BLECentralState : Swift.Equatable {}
+extension CommunicationLibrary.BLECentralState : Swift.Hashable {}
+extension CommunicationLibrary.BLECentralState : Swift.RawRepresentable {}
+extension CommunicationLibrary.BLEPeripheralState : Swift.Equatable {}
+extension CommunicationLibrary.BLEPeripheralState : Swift.Hashable {}
+extension CommunicationLibrary.BLEPeripheralState : Swift.RawRepresentable {}
+extension CommunicationLibrary.PeripheralType : Swift.Equatable {}
+extension CommunicationLibrary.PeripheralType : Swift.Hashable {}
+extension CommunicationLibrary.PeripheralType : Swift.RawRepresentable {}
+extension CommunicationLibrary.ConnectionError : Swift.Equatable {}
+extension CommunicationLibrary.ConnectionError : Swift.Hashable {}
+extension CommunicationLibrary.ConnectionError : Swift.RawRepresentable {}
+extension CommunicationLibrary.ConfigKeys : Swift.Equatable {}
+extension CommunicationLibrary.ConfigKeys : Swift.Hashable {}
+extension CommunicationLibrary.ConfigKeys : Swift.RawRepresentable {}
+extension CommunicationLibrary.ScanError : Swift.Equatable {}
+extension CommunicationLibrary.ScanError : Swift.Hashable {}
+extension CommunicationLibrary.ScanError : Swift.RawRepresentable {}
