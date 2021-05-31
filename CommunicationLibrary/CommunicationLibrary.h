@@ -2,7 +2,8 @@
 //  CommunicationLibrary.h
 //  CommunicationLibrary
 //
-//  Created by Admin on 31/05/21.
+//  Created by Rahul C. on 01/04/21.
+//  Copyright © 2021 Harman. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
