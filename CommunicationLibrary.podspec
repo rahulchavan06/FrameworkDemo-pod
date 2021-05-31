@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = 'CommunicationLibrary.xcframework'
   spec.swift_version = "5.0"
   spec.dependency 'Realm'
-  spec.dependency 'RealmSwift'
+  spec.dependency 'https://github.com/realm/realm-cocoa.git'
 
 end
 
