@@ -16,5 +16,7 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = 'CommunicationLibrary.xcframework', 'MyFramework.xcframework'
   spec.swift_version = "5.0"
 
+  spec.dependency 'Realm', '~> 1.0'
+
 end
 
