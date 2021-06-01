@@ -16,6 +16,8 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = 'CommunicationLibrary.xcframework'
   spec.swift_version = "5.0"
   spec.dependency 'Realm', '~> 1.0'
+  spec.dependency   = { :git => "https://github.com/infoweb77/FruitsName.git", :tag => '0.1' }
+
 
 end
 
