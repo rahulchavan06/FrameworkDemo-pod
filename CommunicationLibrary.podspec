@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "CommunicationLibrary"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "This will provides the CommunicationLibrary.xcframework as a pod installer"
 
   spec.description  = <<-DESC
@@ -15,7 +15,6 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/rahulchavan06/FrameworkDemo-pod.git", :tag => "#{spec.version}" }
   spec.vendored_frameworks = 'CommunicationLibrary.xcframework'
   spec.swift_version = "5.0"
-
   spec.dependency 'Realm', '~> 1.0'
 
 end
