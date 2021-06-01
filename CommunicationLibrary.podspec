@@ -13,10 +13,8 @@ Pod::Spec.new do |spec|
   spec.license      = "MIT License"
   spec.platform     = :ios, "11.0"
   spec.source       = { :git => "https://github.com/rahulchavan06/FrameworkDemo-pod.git", :tag => "#{spec.version}" }
-  spec.vendored_frameworks = 'CommunicationLibrary.xcframework'
+  spec.vendored_frameworks = 'CommunicationLibrary.xcframework', 'MyFramework.xcframework'
   spec.swift_version = "5.0"
-  spec.dependency 'Realm', '~> 1.0'
-  spec.dependency = 'FruitsName', :git => 'https://github.com/infoweb77/FruitsName.git'
 
 end
 
